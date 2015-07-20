@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'factory_girl_rails'
 gem 'rails_12factor', group: :production
+gem 'yelp', require: 'yelp'
+# image uploading and connecting with amazon s3
+gem 'carrierwave'
+gem 'fog'
+# for hiding password on github
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

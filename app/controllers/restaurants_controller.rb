@@ -5,6 +5,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    params = { term: 'restaurant',
+               limit: 20,
+               category_filter: 'halal'
+    }
+    @yelp = Yelp.client.search('94545', params)
+
   end
 
   # GET /restaurants/1
@@ -69,6 +75,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :phone, :website)
+      params.require(:restaurant).permit(:name, :address, :phone, :website, :image)
     end
 end
