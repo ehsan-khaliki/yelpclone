@@ -5,11 +5,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
-    params = { term: 'restaurant',
-               limit: 20,
-               category_filter: 'halal'
-    }
-    @yelp = Yelp.client.search('94545', params)
+    # params = { term: 'restaurant',
+    #            limit: 20,
+    #            category_filter: 'halal'
+    # }
+    # @yelp = Yelp.client.search('94545', params)
 
   end
 
